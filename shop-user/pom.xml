@@ -36,11 +36,7 @@
         </dependency>
 
 
-        <dependency>
-            <groupId>com.bawei</groupId>
-            <artifactId>shizhichao_common_utils</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+
 
         <!--加入undertow依赖-->
         <dependency>
