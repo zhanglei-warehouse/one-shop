@@ -27,7 +27,7 @@ public class CorsConfig {
         source.registerCorsConfiguration("/**",corsConfiguration);
         //配置过滤器----------
         CorsFilter corsFilter = new CorsFilter(source);
-        //注册过滤器*********
+        //注册过滤器123213213
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(corsFilter);
         filterRegistrationBean.setOrder(0);
         return filterRegistrationBean;
