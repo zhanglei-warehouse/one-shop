@@ -12,6 +12,10 @@
     <artifactId>shop-user</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
         <!--加入web依赖,排除内置的tomcat-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
