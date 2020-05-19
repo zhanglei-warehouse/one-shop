@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.one.shop.mapper.Shop_cartMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.one.shop.entity.Shop_cart">
+        <id column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="skuid" property="skuid" />
+        <result column="pnum" property="pnum" />
+        <result column="createtime" property="createtime" />
+        <result column="updatetime" property="updatetime" />
+        <result column="sum_total" property="sum_total" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, skuid, pnum, createtime, updatetime, sum_total
+    </sql>
+
+</mapper>
