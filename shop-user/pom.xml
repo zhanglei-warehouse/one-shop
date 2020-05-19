@@ -8,9 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>shop-user</artifactId>
-
     <dependencies>
         <!--加入web依赖,排除内置的tomcat-->
         <dependency>
@@ -23,28 +21,16 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
-
         <!-- freemarker starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
-
-
-        <dependency>
-            <groupId>com.bawei</groupId>
-            <artifactId>shizhichao_common_utils</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
         <!--加入undertow依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-undertow</artifactId>
         </dependency>
-
-
         <!--加入 mybatsplus-->
         <!--lombok-->
         <dependency>
@@ -58,14 +44,12 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.2.0</version>
         </dependency>
-
         <!--mysql驱动程序-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
-
         <!-- 单元测试 -->
         <dependency>
             <groupId>junit</groupId>
@@ -73,25 +57,18 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-
         <!--加入代码生成器的依赖-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>
             <version>3.3.0</version>
         </dependency>
-
         <!--模板引擎-->
         <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity-engine-core</artifactId>
             <version>2.1</version>
         </dependency>
-
-
-
-
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -104,7 +81,6 @@
             </exclusions>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <!--插件配置，打包的时候的不运行测试程序-->
@@ -114,5 +90,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
