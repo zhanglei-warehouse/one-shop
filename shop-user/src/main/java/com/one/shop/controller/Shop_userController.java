@@ -36,7 +36,7 @@ public class Shop_userController {
      *
      */
     @RequestMapping("login")
-    public ResultEntity login(Shop_user shop_user, HttpServletRequest httpServletRequest){
+    public ResultEntity login(@RequestBody Shop_user shop_user, HttpServletRequest httpServletRequest){
 
         ResultEntity res = iShop_userService.login(shop_user);
         //如果res中的data是user对象就存入session中
@@ -52,7 +52,7 @@ public class Shop_userController {
      *
      */
     @RequestMapping("register")
-    public ResultEntity register(Shop_user shop_user){
+    public ResultEntity register(@RequestBody Shop_user shop_user){
         ResultEntity res = iShop_userService.register(shop_user);
         return res;
     }
