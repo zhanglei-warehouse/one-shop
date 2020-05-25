@@ -36,6 +36,7 @@ public class Shop_spuController {
         IPage<Shop_spu> iPage=iShopSpuService.selectPageVo(page,shop);
         return iPage;
 
+
     }
 
 }
