@@ -35,7 +35,7 @@ public class CodeGenerators {
         //设置用户名
         dsc.setUsername("root");
         //设置密码
-        dsc.setPassword("root");
+        dsc.setPassword("123456");
         //设置代码生成器对象的数据
         mpg.setDataSource(dsc);
 
@@ -51,7 +51,7 @@ public class CodeGenerators {
         //生成的策略
         StrategyConfig strategy = new StrategyConfig();
         //生成那些表
-        //strategy.setInclude("nation","house");
+        strategy.setInclude("shop_slide");
 
         //排除表
         //strategy.setExclude()

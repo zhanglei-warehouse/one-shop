@@ -18,4 +18,9 @@
         id, goods_name, is_marketable, brand_id, caption, category_id, small_pic
     </sql>
 
+    <select id="selectPageVo" resultType="com.one.shop.entity.Shop_spu">
+        select *from shop_sku
+    </select>
+
+
 </mapper>
