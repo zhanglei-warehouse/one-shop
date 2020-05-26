@@ -50,6 +50,7 @@ public class Shop_userController {
         return res;
     }
     /**
+     *
      *注册方法
      * 参数为shop_user对象
      * @return 1001注册成功返回成功信息，1004注册失败返回失败信息
