@@ -21,7 +21,6 @@ import lombok.experimental.Accessors;
 public class Shop_spu implements Serializable {
 
     private static final long serialVersionUID=1L;
-
     /**
      * 主键
      */
@@ -31,17 +30,17 @@ public class Shop_spu implements Serializable {
     /**
      * SPU名
      */
-    private String goods_name;
+    private String goodsName;
 
     /**
      * 是否上架
      */
-    private String is_marketable;
+    private String isMarketable;
 
     /**
      * 品牌
      */
-    private Integer brand_id;
+    private Integer brandId;
 
     /**
      * 副标题
@@ -51,12 +50,11 @@ public class Shop_spu implements Serializable {
     /**
      * 一级类目
      */
-    private Integer category_id;
+    private Integer categoryId;
 
     /**
      * 小图
      */
-    private String small_pic;
-
+    private String smallPic;
 
 }

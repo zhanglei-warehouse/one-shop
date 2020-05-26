@@ -28,7 +28,7 @@ public class Shop_ordersdetail implements Serializable {
 
     private Integer skuid;
 
-    private BigDecimal total;
+    private Double total;
 
     private Integer oid;
 

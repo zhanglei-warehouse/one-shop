@@ -8,6 +8,8 @@
         <module>eureka-center</module>
         <module>zuul</module>
         <module>shop-user</module>
+        <module>shop-service</module>
+        <module>cloud-gateway</module>
     </modules>
 
     <parent>

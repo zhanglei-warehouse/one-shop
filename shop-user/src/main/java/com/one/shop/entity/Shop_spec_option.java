@@ -31,17 +31,19 @@ public class Shop_spec_option implements Serializable {
     /**
      * 规格项名称
      */
-    private String option_name;
+    private String optionName;
 
     /**
      * 规格ID
      */
-    private Integer spec_id;
+    private Integer specId;
 
     /**
      * 排序值
      */
-    private Integer orders;
+    private Integer oid;
+
+    private String specName;
 
 
 }

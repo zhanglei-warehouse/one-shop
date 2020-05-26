@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.one.shop.mapper.OrdersdetailMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.one.shop.entity.Shop_ordersdetail">
+        <id column="id" property="id" />
+        <result column="skuid" property="skuid" />
+        <result column="total" property="total" />
+        <result column="oid" property="oid" />
+        <result column="pnum" property="pnum" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, skuid, total, oid, pnum
+    </sql>
+
+</mapper>

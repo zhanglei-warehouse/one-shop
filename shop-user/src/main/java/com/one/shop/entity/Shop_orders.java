@@ -3,6 +3,8 @@ package com.one.shop.entity;
 import java.math.BigDecimal;
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDate;
+
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import lombok.Data;
@@ -29,11 +31,13 @@ public class Shop_orders implements Serializable {
 
     private Integer uid;
 
-    private BigDecimal sumtotal;
+    private Double sumtotal;
 
     private String address;
 
     private LocalDate create_time;
 
+    @TableField(exist = false)
+    private Integer[] skuIds;
 
 }

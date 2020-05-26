@@ -2,9 +2,12 @@ package com.one.shop.entity;
 
 import java.math.BigDecimal;
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.util.Date;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -30,29 +33,39 @@ public class Shop_cart implements Serializable {
     /**
      * 用户id
      */
-    private String uid;
+    private int uid;
 
     /**
      * 商品id(商品型号)
      */
-    private String skuid;
+    private int skuid;
 
     /**
      * 购买数量
      */
-    private BigDecimal pnum;
+    private int pnum;
 
     /**
      * 创建时间
      */
-    private LocalDateTime createtime;
+    private Date createtime;
 
     /**
      * 最后修改时间
      */
-    private LocalDateTime updatetime;
+    private Date updatetime;
 
-    private BigDecimal sum_total;
-
+    @TableField(exist = false)
+    private Double sumtotal;
+    @TableField(exist = false)
+    private String username;
+    @TableField(exist = false)
+    private Double price;
+    @TableField(exist = false)
+    private String image;
+    @TableField(exist = false)
+    private int status;
+    @TableField(exist = false)
+    private String title;
 
 }

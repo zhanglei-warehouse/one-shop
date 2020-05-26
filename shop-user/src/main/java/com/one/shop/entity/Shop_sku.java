@@ -2,12 +2,17 @@ package com.one.shop.entity;
 
 import java.math.BigDecimal;
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.util.List;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import javax.persistence.Transient;
 
 /**
  * <p>
@@ -43,7 +48,7 @@ public class Shop_sku implements Serializable {
     /**
      * 商品价格，单位为：元
      */
-    private BigDecimal price;
+    private Double price;
 
     /**
      * 库存数量
@@ -85,6 +90,10 @@ public class Shop_sku implements Serializable {
     private Integer spu_id;
 
     private String cart_thumbnail;
+    @TableField(exist = false)
+    private Shop_spu spu;
+    @TableField(exist = false)
+    private List<Shop_spec_option> specs;
 
 
 }
