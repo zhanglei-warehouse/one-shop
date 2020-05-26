@@ -2,6 +2,7 @@ package com.one.shop.mapper;
 
 import com.one.shop.entity.Shop_user;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * <p>
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface Shop_userMapper extends BaseMapper<Shop_user> {
 
+    boolean updateUser(@Param("s") Shop_user shop_user);
 }

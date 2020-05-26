@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.one.shop.mapper.Shop_addressMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.one.shop.entity.Shop_address">
+        <id column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="shengid" property="shengid" />
+        <result column="shiid" property="shiid" />
+        <result column="xianid" property="xianid" />
+        <result column="name" property="name" />
+        <result column="phone" property="phone" />
+        <result column="details" property="details" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, shengid, shiid, xianid, name, phone,details
+    </sql>
+
+    <select id="findAll" resultMap="duo">
+        SELECT
+            ad.*,
+            c1.cityname shengname,
+            c2.cityname shiname,
+            c3.cityname xianname
+        FROM
+            shop_address ad
+        LEFT JOIN shop_city c1 ON c1.id = ad.shengid
+        LEFT JOIN shop_city c2 ON c2.id = ad.shiid
+        LEFT JOIN shop_city c3 ON c3.id = ad.xianid
+        <where>
+            <if test="uid!=null and uid!='' ">
+                and ad.uid=#{uid}
+            </if>
+
+        </where>
+    </select>
+    <resultMap id="duo" type="com.one.shop.entity.Shop_address" extends="BaseResultMap">
+        <result column="shengname" property="shengname"></result>
+        <result column="shiname" property="shiname"></result>
+        <result column="xianname" property="xianname"></result>
+    </resultMap>
+
+
+    <delete id="delAddress">
+        delete from shop_address where id =#{id}
+    </delete>
+
+    <insert id="addAddress">
+        insert into shop_address(uid,shengid,shiid,xianid,name,phone,details) values (#{s.uid},#{s.shengid},#{s.shiid},#{s.xianid},#{s.name},#{s.phone},#{s.details})
+    </insert>
+    <update id="updateAddress">
+        update shop_address set uid=#{s.uid},shengid=#{s.shengid},shiid=#{s.shiid},xianid=#{s.xianid},name=#{s.name},phone=#{s.phone},details=#{s.details} where id=#{s.id}
+    </update>
+
+
+
+
+</mapper>

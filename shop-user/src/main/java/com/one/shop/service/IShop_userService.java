@@ -18,4 +18,6 @@ public interface IShop_userService extends IService<Shop_user> {
     ResultEntity login(Shop_user shop_user);
 
     ResultEntity register(Shop_user shop_user);
+
+    boolean updateUser(Shop_user shop_user);
 }

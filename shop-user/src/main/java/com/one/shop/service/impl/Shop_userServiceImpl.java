@@ -6,6 +6,7 @@ import com.one.shop.mapper.Shop_userMapper;
 import com.one.shop.service.IShop_userService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.one.shop.vo.ResultEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
@@ -63,5 +64,10 @@ public class Shop_userServiceImpl extends ServiceImpl<Shop_userMapper, Shop_user
         }else{
             return ResultEntity.error("添加失败");
         }
+    }
+
+    @Override
+    public boolean updateUser(Shop_user shop_user) {
+        return shop_userMapper.updateUser(shop_user);
     }
 }

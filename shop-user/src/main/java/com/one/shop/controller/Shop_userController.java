@@ -4,11 +4,15 @@ package com.one.shop.controller;
 import com.one.shop.entity.Shop_user;
 import com.one.shop.service.IShop_userService;
 import com.one.shop.vo.ResultEntity;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
+import com.one.shop.entity.Shop_user;
+import com.one.shop.service.IShop_userService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -56,5 +60,28 @@ public class Shop_userController {
         ResultEntity res = iShop_userService.register(shop_user);
         return res;
     }
+
+
+    @RequestMapping("findById")
+    public Shop_user findById(Integer id){
+        Shop_user user = iShop_userService.getById(id);
+
+        return user;
+
+    }
+
+    @RequestMapping("updateUser")
+    public boolean updateUser(@RequestBody Shop_user shop_user){
+        System.err.println(shop_user);
+        boolean shopUser= iShop_userService.updateUser(shop_user);
+
+        System.err.println(shopUser);
+
+        return shopUser;
+    }
+
+
+
+
 }
 
