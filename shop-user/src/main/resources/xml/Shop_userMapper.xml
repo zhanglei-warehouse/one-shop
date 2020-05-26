@@ -23,4 +23,14 @@
         uid, username, password, name, email, telephone, birthday, sex, state, code, img, address
     </sql>
 
+
+    <update id="updateUser">
+        update shop_user ss set ss.name=#{s.name},ss.username=#{s.name},ss.email=#{s.email},
+        ss.telephone=#{s.telephone},ss.birthday=#{s.birthday},ss.sex=#{s.sex},
+        ss.code=#{s.code},ss.img=#{s.img},ss.address=#{s.address} where ss.uid=#{s.uid}
+
+
+    </update>
+
+
 </mapper>

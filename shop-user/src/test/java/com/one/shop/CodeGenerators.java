@@ -51,7 +51,7 @@ public class CodeGenerators {
         //生成的策略
         StrategyConfig strategy = new StrategyConfig();
         //生成那些表
-        //strategy.setInclude("nation","house");
+        strategy.setInclude("shop_city");
 
         //排除表
         //strategy.setExclude()

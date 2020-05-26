@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IShop_userService extends IService<Shop_user> {
 
+    boolean updateUser(Shop_user shop_user);
 }
