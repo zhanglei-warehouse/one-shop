@@ -1,6 +1,5 @@
 package com.one.shop.service.impl;
 
-import com.one.shop.entity.Hg_cart;
 import com.one.shop.entity.Shop_cart;
 import com.one.shop.entity.Shop_sku;
 import com.one.shop.mapper.Hg_cartMapper;
@@ -20,6 +19,7 @@ import java.util.List;
  * @author zhw
  * @since 2020-05-20
  */
+
 @Service
 public class Hg_cartServiceImpl extends ServiceImpl<Hg_cartMapper, Shop_cart> implements IHg_cartService {
 

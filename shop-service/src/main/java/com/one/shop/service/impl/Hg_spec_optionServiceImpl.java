@@ -1,6 +1,5 @@
 package com.one.shop.service.impl;
 
-import com.one.shop.entity.Hg_spec_option;
 import com.one.shop.entity.Shop_spec_option;
 import com.one.shop.mapper.Hg_spec_optionMapper;
 import com.one.shop.service.IHg_spec_optionService;

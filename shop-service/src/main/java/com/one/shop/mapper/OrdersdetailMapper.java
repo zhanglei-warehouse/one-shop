@@ -1,6 +1,5 @@
 package com.one.shop.mapper;
 
-import com.one.shop.entity.Ordersdetail;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.one.shop.entity.Shop_ordersdetail;
 import org.apache.ibatis.annotations.Select;

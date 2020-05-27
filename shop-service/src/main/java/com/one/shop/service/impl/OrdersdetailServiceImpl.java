@@ -1,6 +1,5 @@
 package com.one.shop.service.impl;
 
-import com.one.shop.entity.Ordersdetail;
 import com.one.shop.entity.Shop_ordersdetail;
 import com.one.shop.mapper.OrdersdetailMapper;
 import com.one.shop.service.IOrdersdetailService;

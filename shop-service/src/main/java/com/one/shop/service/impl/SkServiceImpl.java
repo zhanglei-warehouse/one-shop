@@ -1,6 +1,5 @@
 package com.one.shop.service.impl;
 
-import com.one.shop.entity.Sk;
 import com.one.shop.mapper.SkMapper;
 import com.one.shop.service.ISkService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -15,6 +14,6 @@ import org.springframework.stereotype.Service;
  * @since 2020-05-20
  */
 @Service
-public class SkServiceImpl extends ServiceImpl<SkMapper, Sk> implements ISkService {
+public class SkServiceImpl implements ISkService {
 
 }

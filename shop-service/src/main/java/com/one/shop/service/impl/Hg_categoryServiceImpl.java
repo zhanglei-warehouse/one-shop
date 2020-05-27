@@ -1,6 +1,5 @@
 package com.one.shop.service.impl;
 
-import com.one.shop.entity.Hg_category;
 import com.one.shop.entity.Shop_category;
 import com.one.shop.mapper.Hg_categoryMapper;
 import com.one.shop.service.IHg_categoryService;

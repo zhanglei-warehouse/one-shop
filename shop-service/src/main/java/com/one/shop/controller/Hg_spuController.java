@@ -26,7 +26,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/spu/")
-public class Hg_spuController {
+public class  Hg_spuController {
     @Autowired
     private IHg_spuService iHg_spuService;
     @Autowired
