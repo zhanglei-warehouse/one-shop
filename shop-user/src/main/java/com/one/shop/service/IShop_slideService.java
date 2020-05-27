@@ -1,9 +1,7 @@
 package com.one.shop.service;
 
-import com.one.shop.entity.Shop_cart;
+import com.one.shop.entity.Shop_slide;
 import com.baomidou.mybatisplus.extension.service.IService;
-
-import java.util.List;
 
 /**
  * <p>
@@ -11,8 +9,8 @@ import java.util.List;
  * </p>
  *
  * @author @one
- * @since 2020-05-19
+ * @since 2020-05-25
  */
-public interface IShop_cartService extends IService<Shop_cart> {
+public interface IShop_slideService extends IService<Shop_slide> {
 
 }

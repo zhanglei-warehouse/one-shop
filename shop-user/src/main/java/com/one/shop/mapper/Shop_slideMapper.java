@@ -1,9 +1,7 @@
 package com.one.shop.mapper;
 
-import com.one.shop.entity.Shop_cart;
+import com.one.shop.entity.Shop_slide;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-
-import java.util.List;
 
 /**
  * <p>
@@ -11,8 +9,8 @@ import java.util.List;
  * </p>
  *
  * @author @one
- * @since 2020-05-19
+ * @since 2020-05-25
  */
-public interface Shop_cartMapper extends BaseMapper<Shop_cart> {
+public interface Shop_slideMapper extends BaseMapper<Shop_slide> {
 
 }

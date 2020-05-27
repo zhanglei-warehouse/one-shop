@@ -3,7 +3,7 @@
 <mapper namespace="com.one.shop.mapper.Shop_ordersdetailMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.one.shop.entity.Shop_ordersdetail">
+    <resultMap id="BaseResultMap" type="com.one.shop.entity.Shop">
         <id column="id" property="id" />
         <result column="skuid" property="skuid" />
         <result column="total" property="total" />

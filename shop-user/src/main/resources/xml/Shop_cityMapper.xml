@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.one.shop.mapper.Shop_cityMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.one.shop.entity.Shop_city">
+        <id column="id" property="id" />
+        <result column="pid" property="pid" />
+        <result column="cityname" property="cityname" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, pid, cityname
+    </sql>
+
+    <select id="listCity" resultMap="duo">
+        SELECT
+            s1.id shengid,
+            s1.cityname shengname,
+            s2.id shiid,
+            s2.cityname shiname,
+            s3.id xianid,
+            s3.cityname xianname
+        FROM
+            shop_city s1
+        LEFT JOIN shop_city s2 ON s2.pid = s1.id
+        LEFT JOIN shop_city s3 ON s3.pid = s2.id
+        WHERE
+            s1.pid = 0
+    </select>
+    <resultMap id="duo" type="com.one.shop.entity.Shop_cityVo">
+        <id column="shengid" property="id"></id>
+        <result column="shengname" property="name"></result>
+
+        <collection property="list" ofType="com.one.shop.entity.Shop_cityVo">
+            <id column="shiid" property="id"></id>
+            <result column="shiname" property="name"></result>
+
+            <collection property="list" ofType="com.one.shop.entity.Shop_cityVo">
+                <id column="xianid" property="id"></id>
+                <result column="xianname" property="name"></result>
+            </collection>
+
+
+        </collection>
+    </resultMap>
+
+
+</mapper>

@@ -3,7 +3,7 @@
 <mapper namespace="com.one.shop.mapper.Shop_sku_specMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.one.shop.entity.Shop_sku_spec">
+    <resultMap id="BaseResultMap" type="com.one.shop.entity.Shop>
         <id column="id" property="id" />
         <result column="sku_id" property="sku_id" />
         <result column="spec_id" property="spec_id" />

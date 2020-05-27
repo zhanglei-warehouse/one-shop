@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDate;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+import java.util.Date;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -36,7 +38,7 @@ public class Shop_user implements Serializable {
 
     private String telephone;
 
-    private LocalDate birthday;
+    private Date birthday;
 
     private String sex;
 

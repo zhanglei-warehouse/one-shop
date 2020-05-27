@@ -4,7 +4,10 @@ import com.one.shop.entity.Shop_cart;
 import com.one.shop.mapper.Shop_cartMapper;
 import com.one.shop.service.IShop_cartService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>

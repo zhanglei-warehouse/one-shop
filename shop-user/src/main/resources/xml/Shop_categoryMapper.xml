@@ -3,7 +3,7 @@
 <mapper namespace="com.one.shop.mapper.Shop_categoryMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.one.shop.entity.Shop_category">
+    <resultMap id="BaseResultMap" type="com.one.shop.entity.Shop">
         <id column="id" property="id" />
         <result column="parent_id" property="parent_id" />
         <result column="name" property="name" />

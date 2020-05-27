@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.one.shop.mapper.Shop_specMapper">
+<mapper namespace="com.one.shop.mapper.Shop_slideMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.one.shop.entity.Shop">
+    <resultMap id="BaseResultMap" type="com.one.shop.entity.Shop_slide">
         <id column="id" property="id" />
-        <result column="spec_name" property="spec_name" />
+        <result column="title" property="title" />
+        <result column="picture" property="picture" />
+        <result column="url" property="url" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, spec_name
+        id, title, picture, url
     </sql>
 
 </mapper>

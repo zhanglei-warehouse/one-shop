@@ -1,13 +1,13 @@
-package com.one.shop.entity;
+package com.one.shop.vo;
 
 import lombok.Data;
 
 import java.io.Serializable;
+
 @Data
 public class ResultEntity implements Serializable {
 
     private static final long serialVersionUID=1L;
-
 
     //返回的状态码
     private Integer code;
@@ -31,5 +31,5 @@ public class ResultEntity implements Serializable {
         return new ResultEntity(4001,"error",data);
     }
 
-
 }
+
