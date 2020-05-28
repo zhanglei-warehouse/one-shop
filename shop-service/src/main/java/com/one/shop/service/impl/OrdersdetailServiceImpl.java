@@ -4,6 +4,7 @@ import com.one.shop.entity.Shop_ordersdetail;
 import com.one.shop.mapper.OrdersdetailMapper;
 import com.one.shop.service.IOrdersdetailService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,5 +17,9 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class OrdersdetailServiceImpl extends ServiceImpl<OrdersdetailMapper, Shop_ordersdetail> implements IOrdersdetailService {
+
+    @Autowired
+    private OrdersdetailMapper ordersdetailMapper;
+
 
 }

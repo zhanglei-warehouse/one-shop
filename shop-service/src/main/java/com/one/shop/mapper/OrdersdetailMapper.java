@@ -2,7 +2,10 @@ package com.one.shop.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.one.shop.entity.Shop_ordersdetail;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * <p>
@@ -14,5 +17,5 @@ import org.apache.ibatis.annotations.Select;
  */
 public interface OrdersdetailMapper extends BaseMapper<Shop_ordersdetail> {
     @Select("select * from shop_ordersdetail where skuid=#{value}")
-    Shop_ordersdetail selectBySkuId(Integer skuid);
+    List<Shop_ordersdetail> selectBySkuId(Integer skuid);
 }

@@ -52,32 +52,15 @@ public class  Hg_spuController {
         }
         return ResultEntity.ok(shop_skus);
     }
-    @RequestMapping("addOrder")
-    public ResultEntity addOrder(@RequestBody Shop_orders shop_orders){
-      /*  Integer[] skuIds=new Integer[1];
-        skuIds[0]=1;
-        Shop_orders shop_orders = new Shop_orders();
-        shop_orders.setAddress("河北");
-        shop_orders.setSkuIds(skuIds);
-        shop_orders.setSumtotal(1.0);
-        shop_orders.setUid(1);
-        shop_orders.setSkuIds(skuIds);*/
-        return ResultEntity.ok(iOrdersService.insert(shop_orders));
-    }
+
     //购物车提交订单
     @RequestMapping("cartOrder")
-    public ResultEntity cartOrder(/*HttpServletRequest request, int[] cartIds, String address*,int[] skuids*/int[] cartIds){
+    public ResultEntity cartOrder(/*HttpServletRequest request, int[] cartIds, String address*/int[] cartIds){
         /*Shop_user user = (Shop_user) request.getSession().getAttribute();
         if(user==null) {
             request.setAttribute("error","您尚未登录");
             return ResultEntity.error("error");
         }*/
-
-        //int insertOrder = iOrdersService.cartOrder(uid,cartIds,address);
-        int[] cartId=new int[1];
-        cartId[0]=1;
-        int[] skuid=new int[1];
-        skuid[0]=1;
         return ResultEntity.ok(iOrdersService.cartOrder(1,cartIds,"河北"));
     }
 }

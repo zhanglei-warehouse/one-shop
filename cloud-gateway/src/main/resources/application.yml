@@ -27,7 +27,7 @@ spring:
         - id: shop-service
           uri: lb://SHOP-SERVICE
           predicates:
-            - Path=/api/spu/**,/api/area/**,/api/img/**,/api/cart/**
+            - Path=/api/spu/**,/api/area/**,/api/img/**,/api/cart/**,/api/orders/**
           filters:
             #去掉前缀的个数
             - StripPrefix=1

@@ -3,6 +3,8 @@ package com.one.shop.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.one.shop.entity.Shop_orders;
 
+import java.util.List;
+
 /**
  * <p>
  *  Mapper 接口
@@ -13,4 +15,5 @@ import com.one.shop.entity.Shop_orders;
  */
 public interface OrdersMapper extends BaseMapper<Shop_orders> {
 
+    List<Shop_orders> getByUid(int uid);
 }

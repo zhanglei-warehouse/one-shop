@@ -2,7 +2,7 @@ package com.one.shop.controller;
 
 
 import com.one.shop.entity.ResultEntity;
-import com.one.shop.service.IT_areaService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -19,15 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/area/")
-public class T_areaController {
-
-    @Autowired
-    private IT_areaService it_areaService;
-
-    @RequestMapping("list")
-    public ResultEntity list(){
-
-        return ResultEntity.ok(it_areaService.getTree());
-    }
+public class T_areaController<IT_areaService> {
 }
 
