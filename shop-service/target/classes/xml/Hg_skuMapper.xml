@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.one.shop.mapper.Hg_skuMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="skuMapper" type="com.one.shop.entity.Shop_sku">
+        <id column="id" property="id" />
+        <result column="title" property="title" />
+        <result column="sell_point" property="sell_point" />
+        <result column="price" property="price" />
+        <result column="stock_count" property="stock_count" />
+        <result column="barcode" property="barcode" />
+        <result column="image" property="image" />
+        <result column="status" property="status" />
+        <result column="create_time" property="create_time" />
+        <result column="update_time" property="update_time" />
+        <result column="cost_price" property="cost_price" />
+        <result column="market_price" property="market_price" />
+        <result column="spu_id" property="spu_id" />
+        <result column="cart_thumbnail" property="cart_thumbnail" />
+        <association property="spu" column="spu_id"
+                     select="com.one.shop.mapper.Hg_spuMapper.findById"></association>
+        <collection property="specs" column="id" select="findSpecsBySkuid"></collection>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, title, sell_point, price, stock_count, barcode, image, status, create_time, update_time, cost_price, market_price, spu_id, cart_thumbnail
+    </sql>
+    <select id="listBySpu" resultMap="skuMapper">
+		select *,id as detailId from shop_sku where spu_id=#{value} order by id desc
+	</select>
+    <select id="findSpecsBySkuid" resultType="com.one.shop.entity.Shop_spec_option">
+
+		select spec.id as specId,
+		spec.spec_name as specName,
+		specval.option_name as optionName,
+		specval.id oid from shop_sku_spec as sku
+		left join shop_spec as spec on spec.id=sku.spec_id
+		left join shop_spec_option as specval on specval.id=sku.spec_option_id
+		where sku.sku_id=#{value}
+	</select>
+</mapper>

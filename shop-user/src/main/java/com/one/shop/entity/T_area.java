@@ -16,7 +16,7 @@ import java.util.List;
  * @since 2020-05-20
  */
 @Data
-@Entity
+
 @Table(name = "t_area")
 public class T_area implements Serializable {
 

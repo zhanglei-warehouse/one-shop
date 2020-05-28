@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.one.shop.mapper.Hg_cartMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.one.shop.entity.Shop_cart">
+        <id column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="skuid" property="skuid" />
+        <result column="pnum" property="pnum" />
+        <result column="createtime" property="createtime" />
+        <result column="updatetime" property="updatetime" />
+        <result column="sumtotal" property="sumtotal" />
+    </resultMap>
+    <!--/* select c.uid,c.id,c.skuid,c.pnum,c.createtime,c.pnum*k.price sum_toal,k.title from shop_cart c join shop_sku k on k.id=c.skuid
+    where c.uid=#{value}*/-->
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, skuid, pnum, createtime, updatetime, sum_total
+    </sql>
+    <select id="listByUid"  resultType="com.one.shop.entity.Shop_cart">
+        SELECT cart.*,`user`.username,sku.title,sku.price,sku.image,sku.status from shop_cart cart  LEFT JOIN shop_user user ON cart.uid=user.uid LEFT JOIN shop_sku sku on cart.skuid=sku.id
+        where cart.uid=#{value}
+    </select>
+    <select id="listByUids" resultType="com.one.shop.entity.Shop_cart">
+        select c.uid,c.id,c.skuid,c.pnum,c.createtime,c.pnum*k.price sumtotal,k.title from shop_cart c join shop_sku k on k.id=c.skuid where c.id in
+        <foreach close=")" open="(" item="id" collection="array" separator=",">#{id} </foreach>
+    </select>
+</mapper>
