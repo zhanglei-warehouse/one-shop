@@ -57,6 +57,9 @@ public class OrdersServiceImpl extends ServiceImpl<OrdersMapper, Shop_orders> im
         }
         return 0;
     }
+
+
+
     //购物车的订单和订单详情
     @Override
     public int cartOrder(int uid, int[] cartIds, String address) {

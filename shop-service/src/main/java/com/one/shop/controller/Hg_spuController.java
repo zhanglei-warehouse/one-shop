@@ -61,6 +61,7 @@ public class  Hg_spuController {
             request.setAttribute("error","您尚未登录");
             return ResultEntity.error("error");
         }*/
+
         return ResultEntity.ok(iOrdersService.cartOrder(1,cartIds,"河北"));
     }
 }
