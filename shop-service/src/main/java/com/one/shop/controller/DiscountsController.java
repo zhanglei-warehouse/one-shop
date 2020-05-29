@@ -31,7 +31,7 @@ public class DiscountsController {
      * 根据用户id和skuid查询优惠卷
      * @param uid
      * @param skuid
-     * @return
+     * @return 优惠卷列表
      */
     @RequestMapping("list")
     public List<Discounts> list(int uid, int skuid){
