@@ -1,6 +1,5 @@
 package com.one.shop.service.impl;
 
-import com.one.shop.entity.Hg_cart;
 import com.one.shop.entity.Shop_cart;
 import com.one.shop.entity.Shop_sku;
 import com.one.shop.mapper.Hg_cartMapper;
@@ -20,6 +19,7 @@ import java.util.List;
  * @author zhw
  * @since 2020-05-20
  */
+
 @Service
 public class Hg_cartServiceImpl extends ServiceImpl<Hg_cartMapper, Shop_cart> implements IHg_cartService {
 
@@ -34,12 +34,24 @@ public class Hg_cartServiceImpl extends ServiceImpl<Hg_cartMapper, Shop_cart> im
 
     @Override
     public int addCart(int uid, int skuId, int buyNum) {
+        Shop_cart cart= hg_cartMapper.selectBySkuId(skuId);
+
         Shop_sku shop_sku = hg_skuMapper.selectById(skuId);
+
         Shop_cart shop_cart = new Shop_cart();
-        shop_cart.setPnum(buyNum);
         shop_cart.setSkuid(skuId);
+        shop_cart.setPnum(buyNum);
         shop_cart.setUid(uid);
         shop_cart.setSumtotal(shop_sku.getPrice()*buyNum);
+
+        if(cart!=null){
+            cart.setPnum(buyNum);
+            System.out.println(cart.getPnum()+"::::pnum=====");
+            cart.setSumtotal(shop_sku.getPrice()*cart.getPnum());
+            System.out.println(cart.getSumtotal()+"=========");
+            int updateById = hg_cartMapper.updateById(cart);
+            return updateById;
+        }
         int insert = hg_cartMapper.insert(shop_cart);
         if(insert>0){
             return insert;

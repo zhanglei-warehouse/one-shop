@@ -1,6 +1,5 @@
 package com.one.shop.mapper;
 
-import com.one.shop.entity.Hg_spec_option;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.one.shop.entity.Shop_spec_option;
 

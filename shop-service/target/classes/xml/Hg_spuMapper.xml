@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.one.shop.mapper.Hg_spuMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="spuMaper" type="com.one.shop.entity.Shop_spu">
+        <id column="id" property="id" />
+        <result column="goods_name" property="goodsName" />
+        <result column="is_marketable" property="isMarketable" />
+        <result column="brand_id" property="brandId" />
+        <result column="caption" property="caption" />
+        <result column="category_id" property="categoryId" />
+        <result column="small_pic" property="smallPic" />
+
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, goods_name, is_marketable, brand_id, caption, category_id, small_pic
+    </sql>
+    <select id="findById"  resultMap="spuMaper">
+    select * from  shop_spu where id=#{value}
+    </select>
+</mapper>

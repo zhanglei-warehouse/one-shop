@@ -1,6 +1,5 @@
 package com.one.shop.service.impl;
 
-import com.one.shop.entity.Hg_sku;
 import com.one.shop.entity.Shop_sku;
 import com.one.shop.mapper.Hg_skuMapper;
 import com.one.shop.service.IHg_skuService;

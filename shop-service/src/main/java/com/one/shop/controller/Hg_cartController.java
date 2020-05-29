@@ -28,15 +28,15 @@ public class Hg_cartController {
     private IHg_cartService iHg_cartService;
     //加入购物车
     @RequestMapping("add")
-    private ResultEntity addCart(/*HttpServletRequest request, int skuid,int buyNum*/){
+    private ResultEntity addCart(/*HttpServletRequest request, */@RequestParam("skuid") int skuid,@RequestParam("buynum") int buynum){
         //Shop_user user = (Shop_user) request.getSession().getAttribute();
         /*if(user==null) {
             return ResultEntity.error("亲，您尚未登录，不能加入购物车");
         }*/
-        System.out.println(1+"数量");
+        System.out.println(buynum+"数量");
         //int addCart = iHg_cartService.addCart(uid, skuId, buyNum);
 
-        int addCart = iHg_cartService.addCart(1, 1, 1);
+        int addCart = iHg_cartService.addCart(1, skuid, buynum);
         if(addCart>0){
             return ResultEntity.ok("成功");
         }

@@ -1,6 +1,5 @@
 package com.one.shop.mapper;
 
-import com.one.shop.entity.Sk;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +10,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author zhw
  * @since 2020-05-20
  */
-public interface SkMapper extends BaseMapper<Sk> {
+public interface SkMapper {
 
 }

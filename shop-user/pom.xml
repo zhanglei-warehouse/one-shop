@@ -12,10 +12,6 @@
     <artifactId>shop-user</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
         <!--加入web依赖,排除内置的tomcat-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -35,7 +31,10 @@
             <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
 
-
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
 
 
         <!--加入undertow依赖-->
@@ -92,6 +91,7 @@
 
 
 
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -102,6 +102,12 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>2.2.5.RELEASE</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

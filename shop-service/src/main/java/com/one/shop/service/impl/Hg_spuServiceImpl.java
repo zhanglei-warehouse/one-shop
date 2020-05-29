@@ -1,6 +1,5 @@
 package com.one.shop.service.impl;
 
-import com.one.shop.entity.Hg_spu;
 import com.one.shop.entity.Shop_spu;
 import com.one.shop.mapper.Hg_spuMapper;
 import com.one.shop.service.IHg_spuService;

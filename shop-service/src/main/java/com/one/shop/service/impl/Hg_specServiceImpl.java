@@ -1,6 +1,5 @@
 package com.one.shop.service.impl;
 
-import com.one.shop.entity.Hg_spec;
 import com.one.shop.entity.Shop_spec;
 import com.one.shop.mapper.Hg_specMapper;
 import com.one.shop.service.IHg_specService;
