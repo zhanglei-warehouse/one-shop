@@ -23,4 +23,8 @@ public interface Shop_addressMapper extends BaseMapper<Shop_address> {
     boolean addAddress(@Param("s") Shop_address shop_address);
 
     boolean updateAddress(@Param("s") Shop_address shop_address);
+
+    Shop_address findAllById(Integer id);
+
+    Shop_address findAllByStatus(int sta);
 }

@@ -12,11 +12,12 @@
         <result column="name" property="name" />
         <result column="phone" property="phone" />
         <result column="details" property="details" />
+        <result column="status" property="status" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, uid, shengid, shiid, xianid, name, phone,details
+        id, uid, shengid, shiid, xianid, name, phone,details,status
     </sql>
 
     <select id="findAll" resultMap="duo">
@@ -54,6 +55,18 @@
     <update id="updateAddress">
         update shop_address set uid=#{s.uid},shengid=#{s.shengid},shiid=#{s.shiid},xianid=#{s.xianid},name=#{s.name},phone=#{s.phone},details=#{s.details} where id=#{s.id}
     </update>
+
+
+
+
+    <select id="findAllById" resultType="com.one.shop.entity.Shop_address">
+        select * from shop_address where id=#{id}
+    </select>
+
+
+    <select id="findAllByStatus" resultType="com.one.shop.entity.Shop_address">
+        select * from shop_address where status=#{sta}
+    </select>
 
 
 

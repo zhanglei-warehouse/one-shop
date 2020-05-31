@@ -22,4 +22,9 @@ public interface IShop_addressService extends IService<Shop_address> {
     boolean addAddress(Shop_address shop_address);
 
     boolean updateAddress(Shop_address shop_address);
+
+
+    Shop_address findAllById(Integer id);
+
+    Shop_address findAllByStatus(int sta);
 }
