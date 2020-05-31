@@ -43,4 +43,14 @@ public class Shop_addressServiceImpl extends ServiceImpl<Shop_addressMapper, Sho
     public boolean updateAddress(Shop_address shop_address) {
         return shop_addressMapper.updateAddress(shop_address);
     }
+
+    @Override
+    public Shop_address findAllById(Integer id) {
+        return shop_addressMapper.findAllById(id);
+    }
+
+    @Override
+    public Shop_address findAllByStatus(int sta) {
+        return shop_addressMapper.findAllByStatus(sta);
+    }
 }

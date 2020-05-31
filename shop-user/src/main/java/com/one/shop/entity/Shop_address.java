@@ -47,4 +47,9 @@ public class Shop_address implements Serializable {
 
     private String details;
 
+
+    private Integer status;
+
+
+
 }

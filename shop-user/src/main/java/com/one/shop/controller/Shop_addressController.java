@@ -1,6 +1,7 @@
 package com.one.shop.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.one.shop.entity.Shop_address;
 import com.one.shop.service.IShop_addressService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,13 +32,21 @@ public class Shop_addressController {
 
     @RequestMapping("listAddress")
     public List<Shop_address> findAddress(Integer uid){
-        return iShop_addressService.findAll(uid);
+        QueryWrapper<Shop_address> wrapper = new QueryWrapper<>();
+
+        wrapper.orderByDesc("status");
+        wrapper.eq("uid", uid);
+        List<Shop_address> list = iShop_addressService.list(wrapper);
+
+
+        return list;
     }
 
 
     @RequestMapping("addAddress")
     public boolean addAddress(@RequestBody Shop_address shop_address){
         System.err.println(shop_address);
+        shop_address.setStatus(0);
         return iShop_addressService.addAddress(shop_address);
     }
 
@@ -51,6 +60,19 @@ public class Shop_addressController {
     public boolean delAddress(Integer id){
         System.err.println(id);
         return iShop_addressService.delAddress(id);
+    }
+
+    @RequestMapping("moren")
+    public boolean moren(Integer id){
+        int sta=1;
+        Shop_address address = iShop_addressService.findAllByStatus(sta);
+        address.setStatus(0);
+        iShop_addressService.updateById(address);
+
+        Shop_address mo = iShop_addressService.findAllById(id);
+        mo.setStatus(1);
+        boolean save = iShop_addressService.updateById(mo);
+        return save;
     }
 
 
