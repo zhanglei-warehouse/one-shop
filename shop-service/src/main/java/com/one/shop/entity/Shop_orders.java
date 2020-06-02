@@ -55,5 +55,8 @@ public class Shop_orders implements Serializable {
     private String imgage;
 
     @TableField(exist = false)
+    private int status;
+
+    @TableField(exist = false)
     private Double total;
 }

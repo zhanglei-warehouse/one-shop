@@ -18,4 +18,6 @@ import java.util.List;
 public interface OrdersdetailMapper extends BaseMapper<Shop_ordersdetail> {
     @Select("select * from shop_ordersdetail where skuid=#{value}")
     List<Shop_ordersdetail> selectBySkuId(Integer skuid);
+    @Delete("delete from shop_ordersdetail where cid in (#{value})")
+    int deleteByCid(int[] cartIds);
 }

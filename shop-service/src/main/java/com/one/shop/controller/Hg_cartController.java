@@ -2,6 +2,7 @@ package com.one.shop.controller;
 
 
 import com.one.shop.entity.ResultEntity;
+import com.one.shop.entity.Shop_cart;
 import com.one.shop.entity.Shop_user;
 import com.one.shop.service.IHg_cartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * <p>

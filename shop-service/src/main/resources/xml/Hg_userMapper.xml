@@ -22,5 +22,8 @@
     <sql id="Base_Column_List">
         uid, username, password, name, email, telephone, birthday, sex, state, code, header_img, path
     </sql>
+    <select id="selectByUid" resultMap="BaseResultMap">
+        select * from shop_user where uid=#{value}
+    </select>
 
 </mapper>

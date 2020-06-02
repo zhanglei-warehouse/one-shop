@@ -17,4 +17,5 @@
     <select id="findById" resultType="com.one.shop.entity.Shop_category">
         select id ,name,path from shop_category where id=#{value}
     </select>
+
 </mapper>

@@ -18,4 +18,5 @@ public interface IHg_cartService extends IService<Shop_cart> {
     List<Shop_cart> listByuId(Integer uid);
 
     int addCart(int uid, int skuId, int buyNum);
+
 }

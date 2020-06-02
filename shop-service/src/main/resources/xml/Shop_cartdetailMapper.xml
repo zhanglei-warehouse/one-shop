@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.one.shop.mapper.Shop_cartdetailMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.one.shop.entity.Shop_cartdetail">
+        <id column="id" property="id" />
+        <result column="cid" property="cid" />
+        <result column="skuid" property="skuid" />
+        <result column="num" property="num" />
+        <result column="total" property="total" />
+        <result column="createtime" property="createtime" />
+        <association property="sku" column="skuid" select="findBySkuid"></association>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, cid, skuid, num, total, createtime
+    </sql>
+    <select id="findByCid" resultMap="BaseResultMap">
+        select * from shop_cartdetail where cid=#{value}
+    </select>
+    <select id="findBySkuid" resultType="com.one.shop.entity.Shop_sku">
+        select * from shop_sku where id=#{value}
+    </select>
+    <select id="selectBySkuId" resultType="com.one.shop.entity.Shop_cartdetail">
+        select * from shop_cartdetail where skuid=#{value}
+    </select>
+</mapper>

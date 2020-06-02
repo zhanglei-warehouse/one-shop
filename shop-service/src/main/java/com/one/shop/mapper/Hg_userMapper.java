@@ -12,5 +12,5 @@ import com.one.shop.entity.Shop_user;
  * @since 2020-05-20
  */
 public interface Hg_userMapper extends BaseMapper<Shop_user> {
-
+        Shop_user selectByUid(int uid);
 }

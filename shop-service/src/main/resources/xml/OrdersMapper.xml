@@ -16,7 +16,15 @@
         oid, uid, sumtotal, address, create_time
     </sql>
     <select id="getByUid" resultType="com.one.shop.entity.Shop_orders">
-        SELECT orders.oid,sku.title,sku.image imgage,sku.price,detail.pnum,detail.id detailId,sku.price,sku.price*detail.pnum total
+        SELECT
+        orders.oid,
+        sku.title,
+        sku.image imgage,
+        sku.price,detail.pnum,
+        detail.id detailId,
+        detail.status,
+        sku.price,
+        sku.price*detail.pnum total
          from shop_orders orders
          JOIN
             shop_ordersdetail detail ON orders.oid=detail.oid

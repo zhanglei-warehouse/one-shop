@@ -9,6 +9,7 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * <p>
@@ -32,12 +33,6 @@ public class Shop_cart implements Serializable {
      * 用户id
      */
     private int uid;
-
-    /**
-     * 商品id(商品型号)
-     */
-    private int skuid;
-
     /**
      * 购买数量
      */
@@ -53,8 +48,13 @@ public class Shop_cart implements Serializable {
      */
     private Date updatetime;
 
-
     private Double sumtotal;
+
+   /* private Shop_user user;
+
+    private List<Shop_cartdetail> details;
+*/
+
     @TableField(exist = false)
     private String username;
     @TableField(exist = false)
@@ -62,8 +62,17 @@ public class Shop_cart implements Serializable {
     @TableField(exist = false)
     private String image;
     @TableField(exist = false)
-    private int status;
-    @TableField(exist = false)
     private String title;
+    @TableField(exist = false)
+    private int cid;
+    @TableField(exist = false)
+    private int detId;
+    @TableField(exist = false)
+    private int skuid;
+    @TableField(exist = false)
+    private int num;
+    @TableField(exist = false)
+    private Double total;
+
 
 }
