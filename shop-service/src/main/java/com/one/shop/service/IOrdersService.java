@@ -21,4 +21,6 @@ public interface IOrdersService extends IService<Shop_orders> {
     int cartOrder(int uid, int[] cartIds, String address);
 
     List<Shop_orders> getByUid(int i);
+
+    boolean selectOrder(Integer uid);
 }

@@ -1,5 +1,6 @@
 package com.one.shop.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.one.shop.entity.*;
 import com.one.shop.mapper.*;
 import com.one.shop.service.IOrdersService;
@@ -86,7 +87,15 @@ public class OrdersServiceImpl extends ServiceImpl<OrdersMapper, Shop_orders> im
             //uid用户id
             shop_orders.setUid(uid);
             //订单总价sql语句中c.pnum*k.price sumtotal
-            shop_orders.setSumtotal(cartList.get(i).getSumtotal());
+            //没有订单返回true  有返回false
+            boolean b = selectOrder(uid);
+            if(b){
+                //首单用户95折
+                shop_orders.setSumtotal(cartList.get(i).getSumtotal());
+            }else{
+                //
+                shop_orders.setSumtotal(cartList.get(i).getSumtotal());
+            }
             //地址
             shop_orders.setAddress(address);
             //订单添加
@@ -122,5 +131,17 @@ public class OrdersServiceImpl extends ServiceImpl<OrdersMapper, Shop_orders> im
         List<Shop_orders> list=ordersMapper.getByUid(uid);
 
         return list;
+    }
+
+    @Override
+    public boolean selectOrder(Integer uid) {
+        QueryWrapper<Shop_orders> shop_ordersQueryWrapper = new QueryWrapper<>();
+        shop_ordersQueryWrapper.eq("uid",uid);
+        Shop_orders shop_orders = ordersMapper.selectOne(shop_ordersQueryWrapper);
+        if(shop_orders!=null){
+            return false;
+        }else{
+            return true;
+        }
     }
 }
